@@ -5,86 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/14.7.0/math.min.js"></script>
-
-    <style>
-        body {
-            background: linear-gradient(180deg, hsl(0, 0%, 0%), hsl(0, 0%, 10%));
-        }
-
-        .container {
-            width: 26.5%;
-            position: relative;
-            margin-left: 35%;
-            margin-top: 6%;
-            background-color: hsl(0, 0%, 0%);
-            padding: 12px;
-            border: 2px solid white;
-            border-radius: 10px;
-        }
-
-        input {
-            width: 346px;
-            height: 140px;
-            border-radius: 10px;
-            margin-bottom: 5px;
-            font-size: 60px;
-        }
-
-        button {
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid black;
-            margin-top: 10px;
-            font-size: 30px;
-            cursor: pointer;
-            background-color: hsl(0, 0%, 10%);
-            font-weight: bolder;
-            color: white;
-            transition: 0.2s;
-        }
-
-        button:hover {
-            background-color: hsl(0, 0%, 20%);
-
-        }
-
-        #btn {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
-
-        .operator {
-            color: hsl(43, 74%, 39%);
-        }
-
-        #equal {
-            background-color: hsl(51, 100%, 35%);
-        }
-
-        #equal:hover {
-            background-color: hsl(51, 100%, 45%);
-        }
-
-        #plus {
-            height: 200%;
-        }
-
-        h1 {
-            color: white;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 5em;
-            text-align: center;
-
-        }
-
-        img {
-            width: 65px;
-            height: 65px;
-            margin-left: 2%;
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/14.7.0/math.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -115,26 +37,7 @@
             <button id="equal" onclick="calculate()">=</button>
         </div>
     </div>
-    <script>
-        const display = document.getElementById("display");
-        function toDisplay(input) {
-            display.value += input;
-        }
-        function remove() {
-            display.value = "";
-        }
-        function calculate() {
-            try {
-                display.value = math.evaluate(display.value);
-            }
-            catch (error) {
-                display.value = "Error";
-            }
-        }
-        function backSpace(){
-            display.value = display.value.slice(0,-1);
-        }
-    </script>
+    <script src="calculator.js"></script>
 
 </body>
 
